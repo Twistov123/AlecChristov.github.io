@@ -579,6 +579,19 @@
                 <p class="click-hint">Click for details</p>
             </div>
 
+            <div class="project-card" onclick="openModal('wind-turbine')">
+                <h3>DIY Wind Turbine</h3>
+                <p class="project-subtitle">Renewable Energy Exploration</p>
+                <p>Explored renewable energy generation by attempting to build a wind turbine using a repurposed electric bike hub motor as a generator. Project discontinued due to feasibility issues.</p>
+                <div class="tech-stack">
+                    <span>Renewable Energy</span>
+                    <span>Motor/Generator</span>
+                    <span>Mechanical Design</span>
+                </div>
+                <span class="project-status" style="background: #fee2e2; color: #991b1b;">Discontinued</span>
+                <p class="click-hint">Click for details</p>
+            </div>
+
             <div class="project-card" onclick="openModal('nda-project')">
                 <h3>Consumer Electronics Product</h3>
                 <p class="project-subtitle">Unison Technology/Safety Lighting Research</p>
@@ -900,6 +913,57 @@
 
                 <h3>Why I Built This</h3>
                 <p>A quality bench power supply is an essential tool for any electronics workbench. Building one from a proven design was a practical way to get a reliable tool while gaining hands-on experience with power supply components and assembly techniques.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Wind Turbine -->
+    <div class="modal-overlay" id="modal-wind-turbine">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('wind-turbine')">&times;</button>
+                <h2>DIY Wind Turbine</h2>
+                <p class="subtitle">Renewable Energy Exploration</p>
+            </div>
+            <div class="modal-body">
+                <div class="nda-notice" style="background: #fee2e2; border-color: #ef4444;">
+                    <h4 style="color: #991b1b;">&#9888; Project Discontinued</h4>
+                    <p style="color: #7f1d1d;">This project was discontinued after prototyping revealed fundamental feasibility issues. While unsuccessful, it provided valuable lessons in renewable energy system design and the importance of early-stage feasibility analysis.</p>
+                </div>
+
+                <h3>Project Concept</h3>
+                <p>The goal was to explore small-scale renewable energy generation by repurposing an electric bike hub motor as a wind turbine generator. Hub motors can function as generators when mechanically driven, making them an attractive option for DIY wind power projects.</p>
+
+                <h3>Approach</h3>
+                <ul>
+                    <li>Repurposed an electric bike hub motor to act as a generator</li>
+                    <li>Designed and fabricated turbine blades</li>
+                    <li>Built an aluminium frame to mount the assembly</li>
+                    <li>Planned rectification and charging circuitry for battery storage</li>
+                </ul>
+
+                <h3>Why It Failed</h3>
+                <p>The aluminium frame and hub motor assembly proved too heavy for practical wind turbine use. The high rotational mass required wind speeds that were rarely available at ground level, and the structural requirements for supporting the weight made the project impractical for a small-scale installation.</p>
+
+                <h3>Lessons Learned</h3>
+                <ul>
+                    <li><strong>Weight matters:</strong> Wind turbine design requires careful attention to rotational mass and cut-in wind speed</li>
+                    <li><strong>Feasibility first:</strong> Should have calculated power output vs. weight ratio before building</li>
+                    <li><strong>Hub motors aren't ideal:</strong> Purpose-built generators or lighter alternator designs are better suited for wind applications</li>
+                    <li><strong>Site assessment:</strong> Average wind speed at the installation site is critical to evaluate early</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Understanding of generator/motor duality</li>
+                    <li>Renewable energy system fundamentals</li>
+                    <li>Mechanical fabrication with aluminium</li>
+                    <li>Project feasibility analysis (learned the hard way)</li>
+                    <li>Knowing when to discontinue a project</li>
+                </ul>
+
+                <h3>Takeaway</h3>
+                <p>Not every project succeeds, but every project teaches something. This experience reinforced the importance of feasibility analysis and calculating key parameters before committing to a full build. The lessons learned here have informed my approach to subsequent projects.</p>
             </div>
         </div>
     </div>
