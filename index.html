@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alec Christov | Electrical Design Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1a1a2e;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #a0aec0;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .tagline {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #cbd5e0;
+            font-size: 1.1rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About */
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 1rem;
+        }
+
+        .education {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #fff;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+        }
+
+        .education h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .project-subtitle {
+            color: #2563eb;
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack span {
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-complete {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-current {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* Skills */
+        .skills-section {
+            margin-bottom: 2rem;
+        }
+
+        .skills-section h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skills-list span {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+        }
+
+        .skills-list.professional span {
+            background: #2563eb;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-item .icon {
+            width: 40px;
+            height: 40px;
+            background: #1a1a2e;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #a0aec0;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #cbd5e0;
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Alec Christov</h1>
+        <p class="subtitle">Electrical Design Engineer</p>
+        <p class="tagline">Welcome to my collection of projects I've completed and am currently working on.</p>
+    </header>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a graduate electrical engineer graduating in 2026 from RMIT University with a
+            Bachelor of Engineering (Electrical and Electronic Engineering) (Honours) combined with
+            a Bachelor of Business (Management).
+        </p>
+        <p>
+            I have hands-on experience in end-to-end electrical design and product development,
+            with an inquisitive and tenacious approach to solving problems. I thrive in team
+            environments and take every opportunity to learn from great mentors and professionals
+            who can guide me and help me develop.
+        </p>
+        <p>
+            Since March 2021, I've been working as an Electrical Design Engineer at Unison Technology,
+            where I've contributed extensively to the design and development of a specialised consumer
+            bicycle safety product, progressing from mentorship into a lead role across electrical design,
+            prototype testing, and product development.
+        </p>
+        <div class="education">
+            <h3>Education</h3>
+            <p><strong>RMIT University</strong> (2020-2026)</p>
+            <p>Bachelor of Engineering (Electrical and Electronic Engineering) (Honours) / Bachelor of Business (Management)</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>Electric Bike</h3>
+                <p class="project-subtitle">Where It All Started</p>
+                <p>Designed and built a complete electric bike featuring a custom-built lithium battery pack. This project sparked my passion for electrical engineering and hands-on design work.</p>
+                <div class="tech-stack">
+                    <span>Battery Design</span>
+                    <span>Power Electronics</span>
+                    <span>Mechanical Integration</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Metal Melting Transformer</h3>
+                <p class="project-subtitle">DIY High-Power Project</p>
+                <p>Built a DIY microwave transformer metal melting rig capable of melting metals. Involved high-current transformer design and thermal management considerations.</p>
+                <div class="tech-stack">
+                    <span>Transformer Design</span>
+                    <span>High Current</span>
+                    <span>Thermal Management</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Three-Port Standalone PV System</h3>
+                <p class="project-subtitle">Custom Management PCB</p>
+                <p>Developed a standalone photovoltaic system with Wi-Fi-enabled power management and sensing, all managed by a custom-designed PCB for monitoring and control.</p>
+                <div class="tech-stack">
+                    <span>PCB Design</span>
+                    <span>Solar/PV</span>
+                    <span>Wi-Fi/IoT</span>
+                    <span>Power Management</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Lithium Ion Charging Circuits</h3>
+                <p class="project-subtitle">Custom Battery Management</p>
+                <p>Designed and built custom lithium ion charging circuit boards for safe and efficient battery charging across various projects.</p>
+                <div class="tech-stack">
+                    <span>PCB Design</span>
+                    <span>Battery Management</span>
+                    <span>Power Electronics</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Dual-Resonance Tesla Coil</h3>
+                <p class="project-subtitle">Steady-State Design</p>
+                <p>Currently designing a dual-resonance steady-state Tesla coil, exploring high-voltage RF design and resonant circuit theory.</p>
+                <div class="tech-stack">
+                    <span>High Voltage</span>
+                    <span>RF Design</span>
+                    <span>Resonant Circuits</span>
+                </div>
+                <span class="project-status status-current">In Progress</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Bicycle Safety Product</h3>
+                <p class="project-subtitle">Unison Technology</p>
+                <p>Lead electrical designer on a specialised consumer bicycle safety product. Responsible for schematic design, PCB layout, component selection, BOM management, prototype assembly and testing across multiple design iterations.</p>
+                <div class="tech-stack">
+                    <span>Schematic Capture</span>
+                    <span>PCB Layout</span>
+                    <span>Prototyping</span>
+                    <span>DFM</span>
+                </div>
+                <span class="project-status status-current">3rd Iteration</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-list">
+                <span>Electrical Design</span>
+                <span>Schematic Capture</span>
+                <span>PCB Layout</span>
+                <span>Design Iteration</span>
+                <span>Component Selection</span>
+                <span>Datasheet Interpretation</span>
+                <span>BOM Management</span>
+                <span>Procurement</span>
+                <span>Prototype Assembly</span>
+                <span>Testing & Debugging</span>
+                <span>Autodesk Fusion 360 Electronics</span>
+                <span>Altium Designer</span>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h3>Professional Skills</h3>
+            <div class="skills-list professional">
+                <span>Leadership</span>
+                <span>Team Coordination</span>
+                <span>Mentoring & Training</span>
+                <span>Stakeholder Management</span>
+                <span>Problem Solving</span>
+                <span>Initiative</span>
+                <span>Composure Under Pressure</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>I'm open to opportunities and would love to hear from you. Feel free to reach out!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">@</div>
+                <div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:Alecchristov@gmail.com">Alecchristov@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">#</div>
+                <div>
+                    <strong>Phone</strong><br>
+                    <a href="tel:+61490816469">0490 816 469</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">&lt;/&gt;</div>
+                <div>
+                    <strong>GitHub</strong><br>
+                    <a href="https://github.com/Twistov123" target="_blank">github.com/Twistov123</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">in</div>
+                <div>
+                    <strong>LinkedIn</strong><br>
+                    <a href="https://linkedin.com/in/alec-christov" target="_blank">linkedin.com/in/alec-christov</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com/Twistov123" target="_blank">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2026 Alec Christov. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Electrical Design Engineer | Melbourne, Australia</p>
+        </div>
+    </footer>
+</body>
+</html>
