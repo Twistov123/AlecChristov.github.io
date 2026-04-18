@@ -128,6 +128,7 @@
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
 
         .project-card:hover {
@@ -183,6 +184,163 @@
         .status-current {
             background: #fef3c7;
             color: #92400e;
+        }
+
+        .click-hint {
+            color: #2563eb;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 12px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 100%;
+            position: relative;
+        }
+
+        .modal-header {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            border: none;
+            color: #fff;
+        }
+
+        .modal-header .subtitle {
+            color: #a0aec0;
+            margin-top: 0.25rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-body h3 {
+            color: #1a1a2e;
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .modal-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .modal-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* NDA Notice */
+        .nda-notice {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .nda-notice h4 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nda-notice p {
+            color: #78350f;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #2563eb;
+        }
+
+        .skill-category h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .skill-category ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .skill-category li {
+            font-size: 0.9rem;
+            margin-bottom: 0.35rem;
         }
 
         /* Skills */
@@ -281,6 +439,19 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            .modal {
+                margin: 1rem;
+                max-height: 95vh;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -314,7 +485,7 @@
             who can guide me and help me develop.
         </p>
         <p>
-            Since March 2021, I've been working as an Electrical Design Engineer at Unison Technology/Safety Lights Research,
+            Since March 2021, I've been working as an Electrical Design Engineer at Unison Technology/Safety Lighting Research,
             where I've contributed extensively to the design and development of an electronic consumer product,
             progressing from mentorship into a lead role across electrical design, prototype testing, and product development.
         </p>
@@ -329,7 +500,7 @@
         <h2>Projects</h2>
         <div class="projects-grid">
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('electric-bike')">
                 <h3>Electric Bike</h3>
                 <p class="project-subtitle">Where It All Started</p>
                 <p>Designed and built a complete electric bike featuring a custom-built lithium battery pack. This project sparked my passion for electrical engineering and hands-on design work.</p>
@@ -339,9 +510,10 @@
                     <span>Mechanical Integration</span>
                 </div>
                 <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('metal-transformer')">
                 <h3>Metal Melting Transformer</h3>
                 <p class="project-subtitle">DIY High-Power Project</p>
                 <p>Built a DIY microwave transformer metal melting rig capable of melting metals. Involved high-current transformer design and thermal management considerations.</p>
@@ -351,9 +523,10 @@
                     <span>Thermal Management</span>
                 </div>
                 <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('pv-system')">
                 <h3>Three-Port Standalone PV System</h3>
                 <p class="project-subtitle">Custom Management PCB</p>
                 <p>Developed a standalone photovoltaic system with Wi-Fi-enabled power management and sensing, all managed by a custom-designed PCB for monitoring and control.</p>
@@ -364,9 +537,10 @@
                     <span>Power Management</span>
                 </div>
                 <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('lithium-charging')">
                 <h3>Lithium Ion Charging Circuits</h3>
                 <p class="project-subtitle">Custom Battery Management</p>
                 <p>Designed and built custom lithium ion charging circuit boards for safe and efficient battery charging across various projects.</p>
@@ -376,9 +550,10 @@
                     <span>Power Electronics</span>
                 </div>
                 <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('tesla-coil')">
                 <h3>Dual-Resonance Tesla Coil</h3>
                 <p class="project-subtitle">Steady-State Design</p>
                 <p>Currently designing a dual-resonance steady-state Tesla coil, exploring high-voltage RF design and resonant circuit theory.</p>
@@ -388,11 +563,12 @@
                     <span>Resonant Circuits</span>
                 </div>
                 <span class="project-status status-current">In Progress</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openModal('nda-project')">
                 <h3>Consumer Electronics Product</h3>
-                <p class="project-subtitle">Unison Technology/Safety Lights Research</p>
+                <p class="project-subtitle">Unison Technology/Safety Lighting Research</p>
                 <p>Lead electrical designer on an electronic consumer product under NDA. Responsible for end-to-end electrical design including schematic capture, PCB layout, component selection, BOM management, prototype assembly, and iterative design refinement.</p>
                 <div class="tech-stack">
                     <span>Schematic Capture</span>
@@ -401,6 +577,7 @@
                     <span>DFM</span>
                 </div>
                 <span class="project-status status-current">3rd Iteration</span>
+                <p class="click-hint">Click for details</p>
             </div>
 
         </div>
@@ -470,7 +647,7 @@
                 <div class="icon">in</div>
                 <div>
                     <strong>LinkedIn</strong><br>
-                    <a href="https://linkedin.com/in/alec-christov" target="_blank">linkedin.com/in/alec-christov</a>
+                    <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn Profile</a>
                 </div>
             </div>
         </div>
@@ -489,5 +666,324 @@
             <p style="margin-top: 0.5rem; font-size: 0.85rem;">Electrical Design Engineer | Melbourne, Australia</p>
         </div>
     </footer>
+
+    <!-- Modal: Electric Bike -->
+    <div class="modal-overlay" id="modal-electric-bike">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('electric-bike')">&times;</button>
+                <h2>Electric Bike</h2>
+                <p class="subtitle">Where It All Started</p>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>This project was my introduction to practical electrical engineering. I designed and built a complete electric bike from the ground up, including a custom lithium-ion battery pack that required careful cell selection, balancing, and protection circuit design.</p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Designed and assembled a custom lithium-ion battery pack using 18650 cells</li>
+                    <li>Implemented battery management system (BMS) for safe charging and discharging</li>
+                    <li>Integrated motor controller with throttle and regenerative braking</li>
+                    <li>Solved mechanical integration challenges for battery mounting and wiring routing</li>
+                    <li>Achieved reliable performance for daily commuting use</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Lithium battery pack design and assembly</li>
+                    <li>Battery management system integration</li>
+                    <li>High-current wiring and connector selection</li>
+                    <li>Power electronics fundamentals</li>
+                    <li>Hands-on problem solving and iterative design</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <p>The battery pack was designed with careful consideration of cell capacity matching, thermal management, and protection against overcharge, overdischarge, and overcurrent conditions. This project taught me the fundamentals of power electronics that I've applied throughout my subsequent work.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Metal Melting Transformer -->
+    <div class="modal-overlay" id="modal-metal-transformer">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('metal-transformer')">&times;</button>
+                <h2>Metal Melting Transformer</h2>
+                <p class="subtitle">DIY High-Power Project</p>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>A high-power project involving the repurposing of microwave oven transformers (MOTs) to create a metal melting rig capable of melting small quantities of metal through resistive heating.</p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Successfully rewound microwave transformer secondary for high-current, low-voltage output</li>
+                    <li>Designed safe switching and control circuitry for high-power operation</li>
+                    <li>Implemented thermal management solutions for sustained operation</li>
+                    <li>Achieved sufficient power output to melt aluminium and other metals</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Transformer theory and practical rewinding techniques</li>
+                    <li>High-current circuit design and safety considerations</li>
+                    <li>Thermal management for high-power applications</li>
+                    <li>Safe handling of dangerous voltages and currents</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <p>The project involved removing the original secondary winding from MOTs and replacing it with a few turns of heavy gauge cable to achieve very high currents at low voltage. This required understanding of transformer principles, wire gauge selection for current capacity, and careful attention to electrical safety.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: PV System -->
+    <div class="modal-overlay" id="modal-pv-system">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('pv-system')">&times;</button>
+                <h2>Three-Port Standalone PV System</h2>
+                <p class="subtitle">Custom Management PCB</p>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>A complete standalone photovoltaic power system featuring a custom-designed PCB for power management, battery charging, and Wi-Fi-enabled monitoring. The system manages power flow between solar panels, battery storage, and loads.</p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Designed custom PCB for three-port power management (solar, battery, load)</li>
+                    <li>Implemented MPPT or PWM solar charge control</li>
+                    <li>Integrated Wi-Fi microcontroller for remote monitoring and data logging</li>
+                    <li>Created power sensing circuits for voltage and current monitoring</li>
+                    <li>Developed complete standalone system requiring no grid connection</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Multi-port power management architecture</li>
+                    <li>Solar charging circuit design</li>
+                    <li>IoT/Wi-Fi embedded system integration</li>
+                    <li>Sensor integration for power monitoring</li>
+                    <li>PCB design for power electronics</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <p>The custom PCB handles the complex task of managing power flow between three ports while monitoring system health. The Wi-Fi capability enables remote access to system data, making it possible to monitor performance and diagnose issues without physical access to the installation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Lithium Charging -->
+    <div class="modal-overlay" id="modal-lithium-charging">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('lithium-charging')">&times;</button>
+                <h2>Lithium Ion Charging Circuits</h2>
+                <p class="subtitle">Custom Battery Management</p>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Development of custom lithium-ion charging circuit boards designed for safe and efficient battery charging across multiple personal projects. These boards implement proper CC/CV charging profiles and protection features.</p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Designed multiple charging circuits for different cell configurations</li>
+                    <li>Implemented proper CC/CV (Constant Current/Constant Voltage) charging profiles</li>
+                    <li>Integrated protection features for overcharge, overdischarge, and overcurrent</li>
+                    <li>Optimised for efficiency and thermal performance</li>
+                    <li>Created reusable designs for future projects</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Lithium battery charging theory and implementation</li>
+                    <li>Charging IC selection and application circuit design</li>
+                    <li>Protection circuit integration</li>
+                    <li>Thermal design for charging applications</li>
+                    <li>PCB layout for power applications</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <p>Each charging circuit was designed with careful attention to the specific requirements of lithium-ion chemistry, including proper termination voltage, charge current limits, and temperature monitoring. The designs balance charging speed with battery longevity and safety.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tesla Coil -->
+    <div class="modal-overlay" id="modal-tesla-coil">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('tesla-coil')">&times;</button>
+                <h2>Dual-Resonance Tesla Coil</h2>
+                <p class="subtitle">Steady-State Design</p>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>An ongoing project to design and build a dual-resonance steady-state Tesla coil (DRSSTC). This project explores high-voltage RF design, resonant circuit theory, and power electronics at the advanced hobbyist level.</p>
+
+                <h3>Current Progress</h3>
+                <ul>
+                    <li>Researching DRSSTC topology and control strategies</li>
+                    <li>Designing primary and secondary coil geometries</li>
+                    <li>Selecting components for the H-bridge driver</li>
+                    <li>Planning feedback and interrupter circuits</li>
+                </ul>
+
+                <h3>Skills Being Developed</h3>
+                <ul>
+                    <li>High-voltage design and safety</li>
+                    <li>RF and resonant circuit theory</li>
+                    <li>H-bridge and gate driver design</li>
+                    <li>Coil winding and tuning techniques</li>
+                    <li>EMI considerations and mitigation</li>
+                </ul>
+
+                <h3>Technical Approach</h3>
+                <p>The DRSSTC approach uses solid-state switching (IGBTs or MOSFETs) to drive the primary coil at its resonant frequency, with feedback from the secondary ensuring the system stays in tune. This allows for controlled, repeatable operation compared to spark-gap designs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: NDA Project -->
+    <div class="modal-overlay" id="modal-nda-project">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('nda-project')">&times;</button>
+                <h2>Consumer Electronics Product</h2>
+                <p class="subtitle">Unison Technology/Safety Lighting Research</p>
+            </div>
+            <div class="modal-body">
+                <div class="nda-notice">
+                    <h4>&#9888; Confidentiality Notice</h4>
+                    <p>This project is under a Non-Disclosure Agreement. Specific product details, schematics, and proprietary information cannot be shared. The information below describes the skills demonstrated and general scope of work without revealing protected details.</p>
+                </div>
+
+                <h3>Role Overview</h3>
+                <p>Lead Electrical Design Engineer on a multi-unit embedded electronics consumer product. Responsible for most of the electrical design engineering work, from concept translation through to prototype iteration and manufacturing preparation.</p>
+
+                <h3>Project Scope</h3>
+                <p>The product architecture involves multiple coordinated electronic units with wireless connectivity, sensor integration, and battery-powered operation. The project has progressed through multiple design iterations with increasing focus on manufacturability and production readiness.</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>System-Level Design</h4>
+                        <ul>
+                            <li>End-to-end electrical design ownership</li>
+                            <li>Product requirements to hardware architecture</li>
+                            <li>Multi-board embedded system design</li>
+                            <li>Design for manufacturability</li>
+                            <li>Balancing performance, cost, and size</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Embedded Electronics</h4>
+                        <ul>
+                            <li>Low-voltage embedded system design</li>
+                            <li>Battery-powered electronics</li>
+                            <li>BLE-connected device architecture</li>
+                            <li>Sensor integration</li>
+                            <li>Power-path and charging design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>PCB Engineering</h4>
+                        <ul>
+                            <li>Schematic capture</li>
+                            <li>PCB layout for compact products</li>
+                            <li>High-density component placement</li>
+                            <li>Power and signal partitioning</li>
+                            <li>3D board/mechanical verification</li>
+                            <li>Panelisation planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Power Management</h4>
+                        <ul>
+                            <li>Li-ion charging circuit integration</li>
+                            <li>Fuel gauge integration</li>
+                            <li>Regulator selection</li>
+                            <li>Low-power design optimisation</li>
+                            <li>USB power-path design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Prototyping & Validation</h4>
+                        <ul>
+                            <li>Hand assembly of SMT prototypes</li>
+                            <li>Bring-up debugging</li>
+                            <li>Hardware fault isolation</li>
+                            <li>Iterative design refinement</li>
+                            <li>Testing partial builds</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Manufacturing Readiness</h4>
+                        <ul>
+                            <li>BOM creation and maintenance</li>
+                            <li>Component sourcing</li>
+                            <li>Obsolescence awareness</li>
+                            <li>Pick-and-place workflow</li>
+                            <li>Production fixture planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Tools & Technologies Used</h3>
+                <ul>
+                    <li><strong>ECAD:</strong> Fusion 360 Electronics, Altium Designer</li>
+                    <li><strong>Embedded:</strong> BLE modules, I2C/SPI/UART interfaces, SWD programming</li>
+                    <li><strong>Assembly:</strong> Pick-and-place machines, reflow soldering</li>
+                    <li><strong>Suppliers:</strong> Major electronics distributors and PCB fabricators</li>
+                </ul>
+
+                <h3>Engineering Work Performed</h3>
+                <ul>
+                    <li>Component sizing and current calculations</li>
+                    <li>Charge-current programming</li>
+                    <li>GPIO and interface budgeting</li>
+                    <li>Reset timing and logic design</li>
+                    <li>Power budget analysis</li>
+                    <li>Switching device selection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(projectId) {
+            document.getElementById('modal-' + projectId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(projectId) {
+            document.getElementById('modal-' + projectId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
