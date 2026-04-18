@@ -151,7 +151,7 @@
         .project-image {
             width: 100%;
             aspect-ratio: 16 / 9;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             border-radius: 6px;
             margin-bottom: 1rem;
@@ -279,7 +279,7 @@
         .reference-image img {
             width: 100%;
             aspect-ratio: 16 / 9;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             border-radius: 6px;
             background: #e2e8f0;
@@ -562,7 +562,7 @@
             <div class="project-card" onclick="openModal('electric-bike')">
                 <h3>Electric Bike</h3>
                 <p class="project-subtitle">Where It All Started</p>
-                <img class="project-image" src="Photos/IMG_1097.jpeg" alt="Electric bike wiring and battery integration reference photo">
+                <img class="project-image" src="Photos/Ebike1.jpeg" alt="Electric bike wiring and battery integration reference photo">
                 <p>Designed and built a complete electric bike featuring a custom-built lithium battery pack. This project sparked my passion for electrical engineering and hands-on design work.</p>
                 <div class="tech-stack">
                     <span>Battery Design</span>
@@ -589,6 +589,7 @@
             <div class="project-card" onclick="openModal('pv-system')">
                 <h3>Three-Port Standalone PV System</h3>
                 <p class="project-subtitle">Custom Management PCB</p>
+                <img class="project-image" src="Photos/PVsystem1.jpeg" alt="Standalone photovoltaic system prototype reference photo">
                 <p>Developed a standalone photovoltaic system with Wi-Fi-enabled power management and sensing, all managed by a custom-designed PCB for monitoring and control.</p>
                 <div class="tech-stack">
                     <span>PCB Design</span>
@@ -603,7 +604,7 @@
             <div class="project-card" onclick="openModal('lithium-charging')">
                 <h3>Lithium Ion Charging Circuits</h3>
                 <p class="project-subtitle">Custom Battery Management</p>
-                <img class="project-image" src="Photos/IMG_0784.jpeg" alt="Lithium-ion cells and charging test setup reference photo">
+                <img class="project-image" src="Photos/LipoCharging.jpeg" alt="Lithium-ion charging circuit reference photo">
                 <p>Designed and built custom lithium ion charging circuit boards for safe and efficient battery charging across various projects.</p>
                 <div class="tech-stack">
                     <span>PCB Design</span>
@@ -617,7 +618,7 @@
             <div class="project-card" onclick="openModal('bench-psu')">
                 <h3>DIY 30V 5A Lab Bench Power Supply</h3>
                 <p class="project-subtitle">Build Project (Not Original Design)</p>
-                <img class="project-image" src="Photos/IMG_0729.jpeg" alt="DIY bench power supply assembly reference photo">
+                <img class="project-image" src="Photos/PowerSupply1.jpeg" alt="DIY bench power supply assembly reference photo">
                 <p>Built a variable lab bench power supply following an existing design. Features 0-30V output at up to 5A with digital voltage/current display and control.</p>
                 <div class="tech-stack">
                     <span>Power Electronics</span>
@@ -631,7 +632,7 @@
             <div class="project-card" onclick="openModal('wind-turbine')">
                 <h3>DIY Wind Turbine</h3>
                 <p class="project-subtitle">Renewable Energy Exploration</p>
-                <img class="project-image" src="Photos/IMG_0911.jpeg" alt="DIY wind turbine aluminium rotor prototype reference photo">
+                <img class="project-image" src="Photos/WindTurbine.jpeg" alt="DIY wind turbine aluminium rotor prototype reference photo">
                 <p>Explored renewable energy generation by attempting to build a wind turbine using a repurposed electric bike hub motor as a generator. Project discontinued due to feasibility issues.</p>
                 <div class="tech-stack">
                     <span>Renewable Energy</span>
@@ -743,12 +744,16 @@
 
                 <div class="modal-image-grid">
                     <figure class="reference-image">
-                        <img src="Photos/IMG_1097.jpeg" alt="Electric bike build with wiring exposed during integration">
+                        <img src="Photos/Ebike1.jpeg" alt="Electric bike build with wiring exposed during integration">
                         <figcaption>Electrical integration work during the electric bike build.</figcaption>
                     </figure>
                     <figure class="reference-image">
-                        <img src="Photos/IMG_1101.jpeg" alt="Electric bike lighting and controls during night testing">
+                        <img src="Photos/Ebike2.jpeg" alt="Electric bike lighting and controls during night testing">
                         <figcaption>Night testing of the finished bike electronics.</figcaption>
+                    </figure>
+                    <figure class="reference-image">
+                        <img src="Photos/Ebike4.jpeg" alt="Electric bike battery pack assembly and workshop setup">
+                        <figcaption>Battery pack assembly and bench validation for the electric bike.</figcaption>
                     </figure>
                 </div>
 
@@ -822,6 +827,21 @@
                 <h3>Project Overview</h3>
                 <p>A complete standalone photovoltaic power system featuring a custom-designed PCB for power management, battery charging, and Wi-Fi-enabled monitoring. The system manages power flow between solar panels, battery storage, and loads.</p>
 
+                <div class="modal-image-grid">
+                    <figure class="reference-image">
+                        <img src="Photos/PVsystem1.jpeg" alt="Standalone photovoltaic system prototype and control hardware">
+                        <figcaption>PV system prototype and control hardware.</figcaption>
+                    </figure>
+                    <figure class="reference-image">
+                        <img src="Photos/PVsystem2.jpeg" alt="Standalone photovoltaic system wiring and electronics">
+                        <figcaption>PV system wiring and electronics setup.</figcaption>
+                    </figure>
+                    <figure class="reference-image">
+                        <img src="Photos/PV System3.jpeg" alt="Standalone photovoltaic system build reference">
+                        <figcaption>Additional build reference from the PV system project.</figcaption>
+                    </figure>
+                </div>
+
                 <h3>Key Achievements</h3>
                 <ul>
                     <li>Designed custom PCB for three-port power management (solar, battery, load)</li>
@@ -860,12 +880,12 @@
 
                 <div class="modal-image-grid">
                     <figure class="reference-image">
-                        <img src="Photos/IMG_0784.jpeg" alt="Lithium-ion cells and charging equipment on a workbench">
-                        <figcaption>Cell preparation and charging setup used while developing battery workflows.</figcaption>
+                        <img src="Photos/LipoCharging.jpeg" alt="Lithium-ion charging circuit board reference">
+                        <figcaption>Lithium-ion charging circuit reference.</figcaption>
                     </figure>
                     <figure class="reference-image">
-                        <img src="Photos/IMG_1469.jpeg" alt="Battery pack assembly and soldering equipment on a workbench">
-                        <figcaption>Battery pack assembly and bench validation setup.</figcaption>
+                        <img src="Photos/Ebike3.jpeg" alt="Lithium-ion cells and charging equipment on a workbench">
+                        <figcaption>Cell preparation and charging setup used while developing battery workflows.</figcaption>
                     </figure>
                 </div>
 
@@ -947,8 +967,12 @@
 
                 <div class="modal-image-grid">
                     <figure class="reference-image">
-                        <img src="Photos/IMG_0729.jpeg" alt="DIY bench power supply assembled in a red enclosure">
+                        <img src="Photos/PowerSupply1.jpeg" alt="DIY bench power supply assembled in a red enclosure">
                         <figcaption>Assembly and wiring stage for the DIY bench power supply.</figcaption>
+                    </figure>
+                    <figure class="reference-image">
+                        <img src="Photos/PowerSupply2.jpeg" alt="DIY bench power supply with soldering and test equipment">
+                        <figcaption>Bench testing and tool setup for the DIY power supply.</figcaption>
                     </figure>
                 </div>
 
@@ -1001,7 +1025,7 @@
 
                 <div class="modal-image-grid">
                     <figure class="reference-image">
-                        <img src="Photos/IMG_0911.jpeg" alt="Aluminium rotor prototype for a DIY wind turbine">
+                        <img src="Photos/WindTurbine.jpeg" alt="Aluminium rotor prototype for a DIY wind turbine">
                         <figcaption>Aluminium rotor prototype from the discontinued wind turbine build.</figcaption>
                     </figure>
                 </div>
