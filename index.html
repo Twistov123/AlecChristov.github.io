@@ -566,6 +566,19 @@
                 <p class="click-hint">Click for details</p>
             </div>
 
+            <div class="project-card" onclick="openModal('bench-psu')">
+                <h3>DIY 30V 5A Lab Bench Power Supply</h3>
+                <p class="project-subtitle">Build Project (Not Original Design)</p>
+                <p>Built a variable lab bench power supply following an existing design. Features 0-30V output at up to 5A with digital voltage/current display and control.</p>
+                <div class="tech-stack">
+                    <span>Power Electronics</span>
+                    <span>Assembly</span>
+                    <span>Enclosure Work</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
+            </div>
+
             <div class="project-card" onclick="openModal('nda-project')">
                 <h3>Consumer Electronics Product</h3>
                 <p class="project-subtitle">Unison Technology/Safety Lighting Research</p>
@@ -840,6 +853,53 @@
 
                 <h3>Technical Approach</h3>
                 <p>The DRSSTC approach uses solid-state switching (IGBTs or MOSFETs) to drive the primary coil at its resonant frequency, with feedback from the secondary ensuring the system stays in tune. This allows for controlled, repeatable operation compared to spark-gap designs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Bench PSU -->
+    <div class="modal-overlay" id="modal-bench-psu">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('bench-psu')">&times;</button>
+                <h2>DIY 30V 5A Lab Bench Power Supply</h2>
+                <p class="subtitle">Build Project (Not Original Design)</p>
+            </div>
+            <div class="modal-body">
+                <div class="nda-notice" style="background: #dbeafe; border-color: #3b82f6;">
+                    <h4 style="color: #1e40af;">&#9432; Attribution Notice</h4>
+                    <p style="color: #1e3a8a;">This project was built following an existing design from a YouTube tutorial. I did not design this power supply myself — I assembled it following the instructions and sourced the components. Credit for the original design goes to the tutorial creator.</p>
+                </div>
+
+                <h3>Project Overview</h3>
+                <p>A variable DC lab bench power supply capable of 0-30V output at up to 5A continuous current. Built as a practical tool for electronics work, featuring digital voltage and current display with adjustable limits.</p>
+
+                <h3>Design Source</h3>
+                <p>This build follows the design from <a href="https://www.youtube.com/watch?v=PhLFmokgr9o" target="_blank">this YouTube tutorial</a>. The original designer deserves full credit for the circuit design and build instructions.</p>
+
+                <h3>Components Used</h3>
+                <ul>
+                    <li><strong>AC-DC Power Supply:</strong> 36V 5A 180W Switching Power Supply</li>
+                    <li><strong>DC-DC Converter:</strong> 0-30V 5A Buck-Boost Converter with digital display</li>
+                    <li><strong>Output:</strong> Banana plug binding posts</li>
+                    <li><strong>Control:</strong> 3-pin On-Off-On switch</li>
+                    <li><strong>Input:</strong> 5.5mm DC jack</li>
+                    <li><strong>Cooling:</strong> 80x10mm 12V fan</li>
+                    <li><strong>Other:</strong> Various salvaged parts from old electronics</li>
+                </ul>
+
+                <h3>Skills Practiced</h3>
+                <ul>
+                    <li>Following technical build instructions</li>
+                    <li>Component sourcing and procurement</li>
+                    <li>Enclosure fabrication and layout</li>
+                    <li>Wiring and assembly of power electronics</li>
+                    <li>Testing and verification of output specifications</li>
+                    <li>Salvaging and repurposing components</li>
+                </ul>
+
+                <h3>Why I Built This</h3>
+                <p>A quality bench power supply is an essential tool for any electronics workbench. Building one from a proven design was a practical way to get a reliable tool while gaining hands-on experience with power supply components and assembly techniques.</p>
             </div>
         </div>
     </div>
