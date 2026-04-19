@@ -421,6 +421,41 @@
         }
 
         /* Contact */
+        .resume-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .resume-btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+        .resume-btn-view {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .resume-btn-view:hover { background: #2d2d4e; }
+
+        .resume-btn-download {
+            background: #22832b;
+            color: #fff;
+        }
+
+        .resume-btn-download:hover { background: #1a6621; }
+
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -833,6 +868,11 @@
                     <a href="https://www.linkedin.com/in/alec-christov-6b1568214" target="_blank">LinkedIn Profile</a>
                 </div>
             </div>
+        </div>
+
+        <div class="resume-buttons">
+            <a href="Alec%20Christov%20Resume.pdf" target="_blank" class="resume-btn resume-btn-view">&#128196; View Resume</a>
+            <a href="Alec%20Christov%20Resume.pdf" download="Alec Christov Resume.pdf" class="resume-btn resume-btn-download">&#8681; Download Resume</a>
         </div>
     </section>
 
