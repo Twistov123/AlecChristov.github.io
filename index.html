@@ -552,6 +552,48 @@
             <p><strong>RMIT University</strong> (2020-2026)</p>
             <p>Bachelor of Engineering (Electrical and Electronic Engineering) (Honours) / Bachelor of Business (Management)</p>
         </div>
+
+        <div class="education" style="margin-top: 1rem;">
+            <h3>Relevant Coursework</h3>
+            <div class="skills-grid" style="margin-top: 0.75rem;">
+                <div class="skill-category">
+                    <h4>Power Electronics</h4>
+                    <ul>
+                        <li>Switching Mode Power Supplies</li>
+                        <li>Electrical Conversion</li>
+                        <li>Electrical Plant</li>
+                        <li>High Voltage Engineering</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Electronics &amp; Circuits</h4>
+                    <ul>
+                        <li>Electronics</li>
+                        <li>Electronic Circuits 2</li>
+                        <li>Signals and Systems</li>
+                        <li>Simulation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Embedded &amp; Computing</h4>
+                    <ul>
+                        <li>Introduction to Embedded Systems</li>
+                        <li>Embedded Systems</li>
+                        <li>Engineering Computing</li>
+                        <li>Digital Fundamentals</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Engineering Design</h4>
+                    <ul>
+                        <li>Engineering Design 2</li>
+                        <li>Engineering Design 3</li>
+                        <li>Communication Engineering</li>
+                        <li>Research Methods for Engineering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
@@ -565,10 +607,11 @@
                 <div class="tech-stack">
                     <span>Engineering Process</span>
                     <span>PCB Workflow</span>
+                    <span>Iterative Design</span>
                     <span>Prototype Validation</span>
                     <span>Manufacturing Prep</span>
                 </div>
-                <span class="project-status status-current">In Development</span>
+                <span class="project-status status-current">Final Phase</span>
                 <p class="click-hint">Click for details</p>
             </div>
 
@@ -636,6 +679,20 @@
                     <span>PCB Design</span>
                     <span>Battery Management</span>
                     <span>Power Electronics</span>
+                </div>
+                <span class="project-status status-complete">Completed</span>
+                <p class="click-hint">Click for details</p>
+            </div>
+
+            <div class="project-card" onclick="openModal('psu-3v3')">
+                <h3>3.3V Regulated DC Power Supply</h3>
+                <p class="project-subtitle">Engineering Design 2 — University Project</p>
+                <p>Designed a regulated 3.3V DC power supply in Altium Designer as part of the Engineering Design 2 course at RMIT. Covered schematic capture, PCB layout, and design-for-manufacture considerations.</p>
+                <div class="tech-stack">
+                    <span>Altium Designer</span>
+                    <span>PCB Design</span>
+                    <span>Power Regulation</span>
+                    <span>University Project</span>
                 </div>
                 <span class="project-status status-complete">Completed</span>
                 <p class="click-hint">Click for details</p>
@@ -787,7 +844,7 @@
                 <ul>
                     <li>Designed and assembled a custom lithium-ion battery pack using 18650 cells</li>
                     <li>Implemented battery management system (BMS) for safe charging and discharging</li>
-                    <li>Integrated motor controller with throttle and regenerative braking</li>
+                    <li>Sourced and integrated a brushless hub motor and motor controller for the drive system</li>
                     <li>Solved mechanical integration challenges for battery mounting and wiring routing</li>
                     <li>Achieved reliable performance for daily commuting use</li>
                 </ul>
@@ -797,12 +854,13 @@
                     <li>Lithium battery pack design and assembly</li>
                     <li>Battery management system integration</li>
                     <li>High-current wiring and connector selection</li>
+                    <li>Motor controller selection and system integration</li>
                     <li>Power electronics fundamentals</li>
                     <li>Hands-on problem solving and iterative design</li>
                 </ul>
 
                 <h3>Technical Details</h3>
-                <p>The battery pack was designed with careful consideration of cell capacity matching, thermal management, and protection against overcharge, overdischarge, and overcurrent conditions. This project taught me the fundamentals of power electronics that I've applied throughout my subsequent work.</p>
+                <p>The battery pack was designed with careful consideration of cell capacity matching, thermal management, and protection against overcharge, overdischarge, and overcurrent conditions. The motor and controller were sourced commercially and integrated into the system. This project taught me the fundamentals of power electronics that I've applied throughout my subsequent work.</p>
             </div>
         </div>
     </div>
@@ -970,6 +1028,47 @@
 
                 <h3>Technical Approach</h3>
                 <p>The DRSSTC approach uses solid-state switching (IGBTs or MOSFETs) to drive the primary coil at its resonant frequency, with feedback from the secondary ensuring the system stays in tune. This allows for controlled, repeatable operation compared to spark-gap designs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: 3.3V PSU -->
+    <div class="modal-overlay" id="modal-psu-3v3">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal('psu-3v3')">&times;</button>
+                <h2>3.3V Regulated DC Power Supply</h2>
+                <p class="subtitle">Engineering Design 2 — University Project</p>
+            </div>
+            <div class="modal-body">
+                <div class="nda-notice" style="background: #dbeafe; border-color: #3b82f6;">
+                    <h4 style="color: #1e40af;">&#9432; Note on PCB Images</h4>
+                    <p style="color: #1e3a8a;">The schematic and layout were my own original design completed in Altium Designer. Due to time constraints in the course, a pre-fabricated board provided by RMIT was used for physical testing rather than fabricating my custom layout.</p>
+                </div>
+
+                <h3>Project Overview</h3>
+                <p>A university project completed as part of Engineering Design 2 at RMIT. The brief required designing a regulated 3.3V DC power supply from scratch, covering the full PCB design workflow from schematic capture through to layout and design-for-manufacture outputs in Altium Designer.</p>
+
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Completed full schematic capture of a regulated 3.3V supply in Altium Designer</li>
+                    <li>Designed PCB layout with attention to component placement and power trace routing</li>
+                    <li>Selected and specified appropriate voltage regulator and supporting passives</li>
+                    <li>Generated fabrication outputs (Gerbers, BOM, assembly notes)</li>
+                    <li>Validated regulation performance and load behaviour on the test bench</li>
+                </ul>
+
+                <h3>Skills Developed</h3>
+                <ul>
+                    <li>Altium Designer schematic capture and PCB layout workflow</li>
+                    <li>Linear and switching voltage regulator selection and application</li>
+                    <li>PCB design-for-manufacture considerations</li>
+                    <li>Fabrication output generation (Gerbers, BOM)</li>
+                    <li>Bench testing and validation of power supply specifications</li>
+                </ul>
+
+                <h3>Technical Details</h3>
+                <p>The design targets a regulated 3.3V output suitable for powering microcontroller and digital logic circuits. The project emphasised working within a structured engineering design process — requirements, design, review, and validation — mirroring industry practice.</p>
             </div>
         </div>
     </div>
