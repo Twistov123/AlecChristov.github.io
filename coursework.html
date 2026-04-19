@@ -59,12 +59,7 @@
             text-align: center;
         }
 
-        .back-bar a {
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
+        .back-bar a { color: #fff; font-weight: 500; font-size: 0.95rem; }
         .back-bar a:hover { text-decoration: underline; }
 
         .page-content {
@@ -73,7 +68,56 @@
             padding: 3rem 2rem 4rem;
         }
 
-        /* Category headings */
+        /* ---- Table of Contents ---- */
+        .toc {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc > h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .toc-category { }
+
+        .toc-cat-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1a1a2e;
+            margin-bottom: 0.4rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .toc-category ul { list-style: none; margin: 0; padding: 0; }
+
+        .toc-category li { margin-bottom: 0.25rem; }
+
+        .toc-category a {
+            font-size: 0.875rem;
+            color: #475569;
+            display: block;
+            padding: 0.15rem 0;
+            transition: color 0.15s;
+        }
+
+        .toc-category a:hover { color: #2563eb; text-decoration: none; }
+
+        /* ---- Category headings ---- */
         .category-heading {
             font-size: 1.75rem;
             color: #1a1a2e;
@@ -83,15 +127,14 @@
             margin: 3rem 0 2rem;
         }
 
-        .category-heading:first-of-type { margin-top: 0; }
-
-        /* Course card */
+        /* ---- Course card ---- */
         .course-card {
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             margin-bottom: 2.5rem;
             overflow: hidden;
+            scroll-margin-top: 5rem;
         }
 
         .course-card-header {
@@ -107,12 +150,7 @@
 
         .course-card-header h3 { font-size: 1.3rem; margin: 0; }
 
-        .course-meta {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.3rem;
-        }
+        .course-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.3rem; }
 
         .course-tag {
             background: rgba(255,255,255,0.15);
@@ -132,7 +170,6 @@
             padding-left: 1rem;
         }
 
-        /* Two column layout: text + images */
         .course-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -151,25 +188,10 @@
         }
 
         .course-text h4:first-child { margin-top: 0; }
+        .course-text ul { margin-left: 1.25rem; margin-bottom: 0.5rem; }
+        .course-text li { color: #555; margin-bottom: 0.3rem; font-size: 0.95rem; }
+        .course-text p { color: #555; font-size: 0.95rem; margin-bottom: 0.75rem; }
 
-        .course-text ul {
-            margin-left: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .course-text li {
-            color: #555;
-            margin-bottom: 0.3rem;
-            font-size: 0.95rem;
-        }
-
-        .course-text p {
-            color: #555;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Lab breakdown */
         .lab-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; }
 
         .lab-item {
@@ -182,7 +204,6 @@
         .lab-item strong { color: #1a1a2e; display: block; margin-bottom: 0.2rem; font-size: 0.9rem; }
         .lab-item span { color: #555; font-size: 0.88rem; }
 
-        /* Tool tags */
         .tool-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 
         .tool-tag {
@@ -193,14 +214,11 @@
             border-radius: 14px;
         }
 
-        /* Image gallery */
         .course-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
         }
-
-        .gallery-figure { }
 
         .gallery-figure img {
             width: 100%;
@@ -218,7 +236,6 @@
             line-height: 1.4;
         }
 
-        /* Placeholder for images not yet added */
         .img-placeholder {
             width: 100%;
             aspect-ratio: 16 / 10;
@@ -232,14 +249,6 @@
             text-align: center;
             padding: 0.5rem;
             border: 2px dashed #cbd5e1;
-        }
-
-        /* Full-width image strip */
-        .course-image-strip {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
         }
 
         footer {
@@ -266,6 +275,11 @@
             .course-columns { grid-template-columns: 1fr; }
             nav ul { gap: 1rem; font-size: 0.9rem; }
             .course-card-header { flex-direction: column; }
+            .toc-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .toc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -291,11 +305,56 @@
 
     <div class="page-content">
 
+        <!-- ===================== TABLE OF CONTENTS ===================== -->
+        <nav class="toc" aria-label="Page contents">
+            <h3>Contents</h3>
+            <div class="toc-grid">
+                <div class="toc-category">
+                    <span class="toc-cat-title">Power Electronics</span>
+                    <ul>
+                        <li><a href="#smps">Switching Mode Power Supplies</a></li>
+                        <li><a href="#elec-conversion">Electrical Conversion</a></li>
+                        <li><a href="#electrical-plant">Electrical Plant</a></li>
+                    </ul>
+                </div>
+                <div class="toc-category">
+                    <span class="toc-cat-title">Electronics &amp; Circuits</span>
+                    <ul>
+                        <li><a href="#ec2">Electronic Circuits 2</a></li>
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#signals">Signals &amp; Systems</a></li>
+                        <li><a href="#simulation">Circuit Simulation</a></li>
+                        <li><a href="#com-eng">Communication Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="toc-category">
+                    <span class="toc-cat-title">Embedded Systems</span>
+                    <ul>
+                        <li><a href="#embedded">Embedded Systems (STM32)</a></li>
+                    </ul>
+                </div>
+                <div class="toc-category">
+                    <span class="toc-cat-title">Engineering Design</span>
+                    <ul>
+                        <li><a href="#eng-design-2">PCB Design &amp; Simulation</a></li>
+                        <li><a href="#eng-design-3">Hybrid Power System Design</a></li>
+                    </ul>
+                </div>
+                <div class="toc-category">
+                    <span class="toc-cat-title">High Voltage</span>
+                    <ul>
+                        <li><a href="#hv">High Voltage Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
         <!-- ===================== POWER ELECTRONICS ===================== -->
         <h2 class="category-heading">Power Electronics</h2>
 
         <!-- SMPS -->
-        <div class="course-card">
+        <div class="course-card" id="smps">
             <div class="course-card-header">
                 <div>
                     <h3>Switching Mode Power Supplies</h3>
@@ -307,7 +366,7 @@
                 </div>
             </div>
             <div class="course-body">
-                <p class="course-overview">An in-depth study of DC-DC converter topologies, with a focus on the flyback converter. Progressed from theoretical foundations through PSIM simulation to physical hardware testing, including hand-winding magnetic components in the lab.</p>
+                <p class="course-overview">An in-depth study of DC-DC converter topologies with a focus on the flyback converter. Progressed from theoretical foundations through PSIM simulation to physical hardware testing, including hand-winding magnetic components in the lab.</p>
 
                 <div class="course-columns">
                     <div class="course-text">
@@ -356,16 +415,16 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/smps/lab3-20v-25pct.png" alt="PSIM simulation waveform: flyback converter at 20V input, 25% load — showing output voltage (green ~12V), primary diode current I(D2) sawtooth waveform, and secondary diode current I(D8)">
-                                <figcaption>Lab 3 — PSIM flyback waveforms at 20V input, 25% load. Upper trace: output voltage. Lower traces: primary and secondary diode currents.</figcaption>
+                                <img src="Photos/Coursework/smps/lab3-20v-25pct.png" alt="PSIM flyback converter simulation at 20V input 25% load — output voltage trace and primary/secondary diode current waveforms">
+                                <figcaption>Lab 3 — PSIM flyback waveforms at 20V input, 25% load. Upper trace: output voltage (~12V). Lower traces: primary and secondary diode currents.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/smps/lab3-40v-100pct.png" alt="PSIM flyback converter simulation at 40V input, 100% load — primary and secondary diode current waveforms showing DCM/CCM behaviour">
-                                <figcaption>Lab 3 — 40V input at full load. Diode current waveforms show the transition in conduction mode compared to lighter loads.</figcaption>
+                                <img src="Photos/Coursework/smps/lab3-40v-100pct.png" alt="PSIM flyback converter at 40V input full load — diode current waveforms showing conduction mode behaviour">
+                                <figcaption>Lab 3 — 40V input at full load. Diode current waveforms show conduction mode compared to lighter loads.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/smps/lab4-transformer.jpg" alt="Hand-wound E-core flyback transformer on a workbench with oscilloscope probes and test leads attached">
-                                <figcaption>Lab 4 — Hand-wound E-core transformer. Copper wire secondary winding, connected to the test circuit for measurement.</figcaption>
+                                <img src="Photos/Coursework/smps/lab4-transformer.jpg" alt="Hand-wound E-core flyback transformer on a lab workbench with oscilloscope probes and test leads attached">
+                                <figcaption>Lab 4 — Hand-wound E-core transformer. Copper wire secondary winding connected to the test circuit for measurement.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -374,7 +433,7 @@
         </div>
 
         <!-- Electrical Conversion -->
-        <div class="course-card">
+        <div class="course-card" id="elec-conversion">
             <div class="course-card-header">
                 <div>
                     <h3>Electrical Conversion</h3>
@@ -431,20 +490,20 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/elec-conversion/lab3-r-load-waveform.png" alt="Keysight oscilloscope screenshot showing four channels: supply voltage (brown), load current (blue), rectified output (green), and ripple current (pink/yellow) of a thyristor rectifier under resistive load">
+                                <img src="Photos/Coursework/elec-conversion/lab3-r-load-waveform.png" alt="Keysight oscilloscope four-channel capture of thyristor rectifier under resistive load — supply voltage, DC output, and current waveforms">
                                 <figcaption>Lab 3 — Keysight oscilloscope capture of thyristor rectifier under R load. Four simultaneous channels: supply voltage, DC output, and current waveforms.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/elec-conversion/lab4-halfwave-circuit.png" alt="PSIM schematic of single-phase half-wave thyristor rectifier circuit with PWM firing control, voltage and current probes">
+                                <img src="Photos/Coursework/elec-conversion/lab4-halfwave-circuit.png" alt="PSIM schematic of single-phase half-wave thyristor rectifier with PWM firing control block and measurement probes">
                                 <figcaption>Lab 4 — PSIM single-phase half-wave thyristor circuit. PWM firing block controls conduction angle; probes measure supply voltage, current, and DC output.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/elec-conversion/lab5-buck-lc.png" alt="PSIM simulation waveform of buck converter with LC load at 50% duty cycle showing inductor current and output voltage">
+                                <img src="Photos/Coursework/elec-conversion/lab5-buck-lc.png" alt="PSIM buck converter simulation waveform with LC load at 50% duty cycle">
                                 <figcaption>Lab 5 — Buck converter simulation with LC load at 50% duty cycle. Output voltage and inductor current waveforms across varying duty.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/elec-conversion/lab4-3ph-thd.png" alt="PSIM FFT/THD analysis output for three-phase full-wave thyristor rectifier showing harmonic spectrum at various firing angles">
-                                <figcaption>Lab 4 — FFT harmonic analysis of three-phase full-wave rectifier. THD quantified at 0&deg;, 30&deg;, 90&deg;, 120&deg;, and 180&deg; firing angles.</figcaption>
+                                <img src="Photos/Coursework/elec-conversion/lab4-3ph-thd.png" alt="PSIM FFT harmonic analysis of three-phase full-wave thyristor rectifier at 30 degree firing angle">
+                                <figcaption>Lab 4 — FFT harmonic analysis of three-phase full-wave rectifier. THD quantified across multiple firing angles.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -453,7 +512,7 @@
         </div>
 
         <!-- Electrical Plant -->
-        <div class="course-card">
+        <div class="course-card" id="electrical-plant">
             <div class="course-card-header">
                 <div>
                     <h3>Electrical Plant</h3>
@@ -467,7 +526,7 @@
             <div class="course-body">
                 <p class="course-overview">Introduction to large-scale electrical plant equipment and power systems, including transformers, motors, and generators. Practical simulation work used MATLAB and Simulink to model and analyse machine behaviour.</p>
 
-                <div class="course-columns">
+                <div class="course-columns full-width">
                     <div class="course-text">
                         <h4>Topics Covered</h4>
                         <ul>
@@ -492,15 +551,6 @@
                             <span class="tool-tag">Simulink</span>
                         </div>
                     </div>
-
-                    <div>
-                        <div class="course-gallery">
-                            <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Simulink machine model</small></div>
-                                <figcaption>Simulink model of electrical machine — add image here.</figcaption>
-                            </figure>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -510,7 +560,7 @@
         <h2 class="category-heading">Electronics &amp; Circuits</h2>
 
         <!-- Electronic Circuits 2 -->
-        <div class="course-card">
+        <div class="course-card" id="ec2">
             <div class="course-card-header">
                 <div>
                     <h3>Electronic Circuits 2</h3>
@@ -562,16 +612,16 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/ec2/lab1-mosfet-id-vds.png" alt="MOSFET Id vs Vds characteristic curves plotted at Vgs = 1V, 1.5V, 2V, and 2.5V — showing saturation current plateaus increasing with gate voltage">
+                                <img src="Photos/Coursework/ec2/lab1-mosfet-id-vds.png" alt="MOSFET Id vs Vds characteristic curves at Vgs = 1V, 1.5V, 2V, 2.5V — saturation current plateaus clearly increasing with gate voltage">
                                 <figcaption>Lab 1 — MOSFET Id vs Vds characteristic curves at four Vgs bias points. Saturation current increases distinctly with gate voltage.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Current mirror circuit + measurements</small></div>
-                                <figcaption>Lab 2 — Current mirror circuit schematic and measurement results.</figcaption>
+                                <img src="Photos/Coursework/ec2/Mirror Circuit.png" alt="Multisim schematic of a BJT current mirror circuit using 2N3904 transistors with a reference resistor and KeynA current source">
+                                <figcaption>Lab 2 — Current mirror circuit in Multisim. Two 2N3904 BJTs with shared base-collector connection; reference current set by resistor and voltage source.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Differential amplifier transfer curve</small></div>
-                                <figcaption>Lab 3 — Differential amplifier transfer characteristic plot.</figcaption>
+                                <img src="Photos/Coursework/ec2/Diff Gain vs Diff V.png" alt="Plot of differential gain vs differential input voltage showing two S-shaped curves Ad1 (red) and Ad2 (green) crossing near 0V, x-axis ±100mV, gain range -9 to +1">
+                                <figcaption>Lab 3 — Simulated differential gain (Ad1, Ad2) vs differential input voltage. S-shaped curves cross near 0 V, confirming expected differential amplifier behaviour.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -580,7 +630,7 @@
         </div>
 
         <!-- Electronics -->
-        <div class="course-card">
+        <div class="course-card" id="electronics">
             <div class="course-card-header">
                 <div>
                     <h3>Electronics</h3>
@@ -626,8 +676,8 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Multisim amplifier circuit + simulation results</small></div>
-                                <figcaption>Multisim circuit simulation — amplifier design with frequency response analysis.</figcaption>
+                                <img src="Photos/Coursework/Electronics/Single stage amplifier.png" alt="Multisim schematic of BC548BP common-emitter BJT amplifier with bias resistors Rb1=37.52kΩ Rb2=32.76kΩ, Rc=800Ω, Re=598Ω, coupling and bypass capacitors, 5V supply">
+                                <figcaption>BC548BP common-emitter BJT amplifier schematic in Multisim. Bias network (Rb1, Rb2), emitter bypass capacitor (Ce), and AC-coupled output drive a 5 kΩ load at 50 kHz.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -636,10 +686,10 @@
         </div>
 
         <!-- Signals and Systems -->
-        <div class="course-card">
+        <div class="course-card" id="signals">
             <div class="course-card-header">
                 <div>
-                    <h3>Signals and Systems</h3>
+                    <h3>Signals &amp; Systems</h3>
                     <div class="course-meta">
                         <span class="course-tag">Year 2 &mdash; Sem 1</span>
                         <span class="course-tag">Signal Processing</span>
@@ -650,7 +700,7 @@
             <div class="course-body">
                 <p class="course-overview">Foundational signal processing theory implemented in MATLAB. Covered time-domain and frequency-domain analysis, culminating in spectrogram generation and FFT-based signal characterisation of real audio signals.</p>
 
-                <div class="course-columns">
+                <div class="course-columns full-width">
                     <div class="course-text">
                         <h4>Topics Covered</h4>
                         <ul>
@@ -683,16 +733,128 @@
                             <span class="tool-tag">MATLAB</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Circuit Simulation -->
+        <div class="course-card" id="simulation">
+            <div class="course-card-header">
+                <div>
+                    <h3>Circuit Simulation</h3>
+                    <div class="course-meta">
+                        <span class="course-tag">Year 6</span>
+                        <span class="course-tag">NI Multisim</span>
+                        <span class="course-tag">Analogue Circuits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-body">
+                <p class="course-overview">Advanced circuit simulation using NI Multisim. Labs covered amplifier circuit design, DC operating point analysis, AC frequency response, and transient behaviour. An individual assignment required independent circuit analysis with hand calculations verified against simulation.</p>
+
+                <div class="course-columns">
+                    <div class="course-text">
+                        <h4>Topics Covered</h4>
+                        <ul>
+                            <li>Multisim schematic entry and simulation workflow</li>
+                            <li>DC operating point and bias point analysis</li>
+                            <li>AC analysis: frequency response, Bode plots</li>
+                            <li>Transient simulation and time-domain waveforms</li>
+                            <li>Common-gate amplifier configuration and analysis</li>
+                            <li>Hand calculation verification against simulation results</li>
+                        </ul>
+
+                        <h4>Lab Breakdown</h4>
+                        <div class="lab-list">
+                            <div class="lab-item">
+                                <strong>Lab 2 &mdash; Amplifier Circuit Simulation</strong>
+                                <span>Designed and simulated amplifier circuits (Figures 1–3) in Multisim. Explored common-gate and related configurations. Compared simulation output to expected analytical results.</span>
+                            </div>
+                            <div class="lab-item">
+                                <strong>Lab 3 &mdash; Advanced Circuit Analysis</strong>
+                                <span>Extended simulation work to more complex circuits. Generated AC frequency response curves and transient waveforms. Documented results against theoretical predictions.</span>
+                            </div>
+                            <div class="lab-item">
+                                <strong>Individual Assignment</strong>
+                                <span>Independent assignment requiring hand calculations for two circuit tasks, verified through Multisim simulation. Demonstrated ability to bridge theoretical analysis with practical simulation.</span>
+                            </div>
+                        </div>
+
+                        <h4>Tools Used</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">NI Multisim</span>
+                        </div>
+                    </div>
 
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/signals/lab2b-spectrogram-440-880.jpg" alt="MATLAB-generated spectrogram of a chirp signal sweeping from 440Hz to 880Hz over 10 seconds, plotted as power/frequency (dB/Hz) vs time and frequency axes with colour scale from -140 to -40 dB/Hz">
-                                <figcaption>Lab 2B — MATLAB spectrogram of a chirp signal (440&ndash;880 Hz). Time on Y-axis, frequency on X-axis. Yellow vertical line shows signal onset; horizontal bands reveal harmonic structure.</figcaption>
+                                <img src="Photos/Coursework/Simulation/Common source amplifier.png" alt="Multisim schematic of two-stage common-source MOSFET amplifier using 2N7000 transistors with VDD=9V, measurement probes showing voltage and frequency at each stage">
+                                <figcaption>Lab 2 — Two-stage common-source MOSFET amplifier in Multisim. 2N7000 transistors with 9 V supply; measurement probes show Vp-p, Vrms, Vdc, and frequency at each node.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>FFT frequency domain plot</small></div>
-                                <figcaption>Lab 2B — FFT magnitude spectrum plot comparing multiple frequency configurations.</figcaption>
+                                <img src="Photos/Coursework/Simulation/Common Source outputs.png" alt="Multisim four-channel virtual oscilloscope showing three sinusoidal waveforms with amplitude and phase measurements for the two-stage common-source amplifier">
+                                <figcaption>Lab 2 — Oscilloscope measurement of Stage 2 amplifier output. Input signal (blue/behind pink) and output (cyan) show amplified sinusoidal waveforms with measured amplitude and phase shift.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Communication Engineering -->
+        <div class="course-card" id="com-eng">
+            <div class="course-card-header">
+                <div>
+                    <h3>Communication Engineering</h3>
+                    <div class="course-meta">
+                        <span class="course-tag">Year 4 &mdash; Sem 2</span>
+                        <span class="course-tag">EEET2254</span>
+                        <span class="course-tag">Digital Communications</span>
+                        <span class="course-tag">MATLAB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-body">
+                <p class="course-overview">Study of digital modulation and demodulation techniques with implementation in MATLAB. Core focus on Quadrature Phase Shift Keying (QPSK): generating modulated signals, analysing their spectral content, and recovering the original baseband data through I/Q demodulation and filtering.</p>
+
+                <div class="course-columns">
+                    <div class="course-text">
+                        <h4>Topics Covered</h4>
+                        <ul>
+                            <li>Analogue and digital modulation theory: AM, FM, PSK, QAM</li>
+                            <li>QPSK modulation: I/Q channel mapping and carrier multiplication</li>
+                            <li>Spectral analysis of modulated signals (time and frequency domain)</li>
+                            <li>Coherent demodulation: I/Q mixing and low-pass filtering</li>
+                            <li>Baseband signal recovery and bit error analysis</li>
+                            <li>MATLAB signal generation, modulation, and FFT analysis</li>
+                        </ul>
+
+                        <h4>Lab Work</h4>
+                        <div class="lab-list">
+                            <div class="lab-item">
+                                <strong>QPSK Modulation and Demodulation</strong>
+                                <span>Implemented QPSK modulation in MATLAB: mapped a binary data stream onto I and Q channels, multiplied by quadrature carriers, and summed to produce the modulated waveform. Analysed the result in both time domain and frequency domain using FFT, showing symmetric spectral peaks at ±6000 Hz. Demodulated using coherent I/Q mixing and low-pass filtering to recover the original baseband square-wave signals.</span>
+                            </div>
+                        </div>
+
+                        <h4>Tools Used</h4>
+                        <div class="tool-tags">
+                            <span class="tool-tag">MATLAB</span>
+                            <span class="tool-tag">FFT Analysis</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="course-gallery">
+                            <figure class="gallery-figure">
+                                <img src="Photos/Coursework/com eng/input QPSK.png" alt="MATLAB figure showing modulated QPSK signal in time domain (dense ±1 band) and frequency domain (symmetric spectral peaks at ±6000 Hz)">
+                                <figcaption>MATLAB QPSK modulation output. Top: modulated signal in the time domain — high-frequency carrier with ±1 amplitude envelope. Bottom: frequency spectrum with symmetric spectral peaks at ±6000 Hz confirming correct carrier frequency.</figcaption>
+                            </figure>
+                            <figure class="gallery-figure">
+                                <img src="Photos/Coursework/com eng/QPSK demodded.png" alt="MATLAB figure showing recovered In-phase (I) and Quadrature (Q) baseband components after QPSK demodulation — square-wave signals at ±0.8 amplitude over 0 to 0.5 seconds">
+                                <figcaption>QPSK demodulation output. Top: recovered In-phase (I) component; Bottom: recovered Quadrature (Q) component. Both show clean baseband square-wave signals (±0.8 V) demonstrating successful coherent demodulation.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -702,10 +864,10 @@
 
 
         <!-- ===================== EMBEDDED SYSTEMS ===================== -->
-        <h2 class="category-heading">Embedded Systems &amp; Computing</h2>
+        <h2 class="category-heading">Embedded Systems</h2>
 
         <!-- Embedded Systems -->
-        <div class="course-card">
+        <div class="course-card" id="embedded">
             <div class="course-card-header">
                 <div>
                     <h3>Embedded Systems</h3>
@@ -737,7 +899,7 @@
                         <div class="lab-list">
                             <div class="lab-item">
                                 <strong>Lab 1 &mdash; GPIO and RCC Configuration</strong>
-                                <span>Configured the STM32F439's RCC peripheral clock tree and set up GPIO pins for digital I/O. Wrote bare-metal C to toggle LEDs and read input states by directly writing to hardware registers.</span>
+                                <span>Configured the STM32F439's RCC peripheral clock tree and GPIO pins for digital I/O. Wrote bare-metal C to toggle LEDs and read input states by directly writing hardware registers.</span>
                             </div>
                             <div class="lab-item">
                                 <strong>Lab 2 &mdash; Timers and Interrupts</strong>
@@ -763,48 +925,9 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>STM32F439 dev board / Keil MDK screenshot</small></div>
-                                <figcaption>STM32F439 development board used for bare-metal C labs.</figcaption>
+                                <img src="Photos/Coursework/Embedded /Assembler code with keil uvision.png" alt="Keil uVision5 IDE showing ARM assembler source code with LDR, STR, MOV instructions for GPIO operations, Registers panel on left, SFRPC and Memory windows visible">
+                                <figcaption>Keil uVision5 IDE during ARM assembler lab. Source shows GPIO_BASE and RTP_MASK register operations; Registers and Memory panels display live hardware state during debugging.</figcaption>
                             </figure>
-                            <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Keil MDK code / debug screenshot</small></div>
-                                <figcaption>Keil MDK development environment — register view and C source.</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Intro to Embedded -->
-        <div class="course-card">
-            <div class="course-card-header">
-                <div>
-                    <h3>Introduction to Embedded Systems</h3>
-                    <div class="course-meta">
-                        <span class="course-tag">Year 2 &mdash; Sem 2 &amp; Year 3 &mdash; Sem 2</span>
-                        <span class="course-tag">Microcontrollers</span>
-                    </div>
-                </div>
-            </div>
-            <div class="course-body">
-                <p class="course-overview">Entry-level microcontroller programming covering the fundamentals of embedded C, digital I/O, and basic peripheral interfacing. Provided the foundation for the more advanced Embedded Systems course in Year 6.</p>
-
-                <div class="course-columns full-width">
-                    <div class="course-text">
-                        <h4>Topics Covered</h4>
-                        <ul>
-                            <li>Microcontroller architecture fundamentals</li>
-                            <li>Embedded C programming: data types, control flow, pointers</li>
-                            <li>Digital input/output programming</li>
-                            <li>Basic peripheral interfacing (timers, serial)</li>
-                            <li>Debugging and testing embedded code</li>
-                        </ul>
-
-                        <h4>Tools Used</h4>
-                        <div class="tool-tags">
-                            <span class="tool-tag">Embedded C</span>
-                            <span class="tool-tag">Microcontroller Dev Board</span>
                         </div>
                     </div>
                 </div>
@@ -816,19 +939,19 @@
         <h2 class="category-heading">Engineering Design</h2>
 
         <!-- Eng Design 2 -->
-        <div class="course-card">
+        <div class="course-card" id="eng-design-2">
             <div class="course-card-header">
                 <div>
-                    <h3>Engineering Design 2</h3>
+                    <h3>PCB Design &amp; Simulation</h3>
                     <div class="course-meta">
+                        <span class="course-tag">Engineering Design 2</span>
                         <span class="course-tag">Year 3 &mdash; Sem 2</span>
                         <span class="course-tag">Altium Designer</span>
-                        <span class="course-tag">PCB Design</span>
                     </div>
                 </div>
             </div>
             <div class="course-body">
-                <p class="course-overview">A structured PCB design project completed in Altium Designer, covering the full workflow from component selection and datasheets through schematic capture, PSIM simulation, PCB layout, and fabrication output generation. The project produced a regulated power supply design using the LM3524 PWM controller IC. Altium was accessed remotely via RMIT's Citrix virtual desktop environment.</p>
+                <p class="course-overview">A structured PCB design project completed in Altium Designer, covering the full workflow from component selection and datasheets through schematic capture, simulation, PCB layout, and fabrication output generation. The project produced a regulated power supply design using the LM3524 PWM controller IC. Altium was accessed remotely via RMIT's Citrix virtual desktop environment.</p>
 
                 <div class="course-columns">
                     <div class="course-text">
@@ -847,15 +970,15 @@
                         <div class="lab-list">
                             <div class="lab-item">
                                 <strong>Milestone 1 &mdash; Component Selection</strong>
-                                <span>Researched and selected components for the power supply design. Gathered datasheets for all key parts: LM3524 PWM controller, IRF9540N power MOSFET, 1N4007 and UF4004 diodes, inductors, and heatsink. Confirmed electrical specifications met design requirements.</span>
+                                <span>Researched and selected components. Gathered datasheets for LM3524 PWM controller, IRF9540N power MOSFET, 1N4007 and UF4004 diodes, inductors, and heatsink. Confirmed electrical specifications met design requirements.</span>
                             </div>
                             <div class="lab-item">
                                 <strong>Milestone 2 &mdash; Simulation and Schematic</strong>
-                                <span>Ran transient analysis simulations in Altium's built-in simulator to verify capacitor voltage, capacitor current, and resistor voltage waveforms against expected behaviour. Captured and analysed transient rise/fall times and steady-state performance. Completed full schematic capture in Altium.</span>
+                                <span>Ran transient analysis simulations in Altium's built-in simulator to verify capacitor voltage, capacitor current, and resistor voltage waveforms. Captured and analysed transient rise/fall times and steady-state performance. Completed full schematic capture.</span>
                             </div>
                             <div class="lab-item">
                                 <strong>Milestone 3 &mdash; PCB Layout and Outputs</strong>
-                                <span>Completed PCB layout in Altium Designer, managing component placement and power trace routing. Generated fabrication outputs (Gerbers, drill files, BOM). Due to course time constraints, physical testing used a pre-fabricated RMIT reference board rather than a custom-fabricated PCB.</span>
+                                <span>Completed PCB layout in Altium, managing component placement and power trace routing. Generated fabrication outputs (Gerbers, drill files, BOM). Due to course time constraints, physical testing used a pre-fabricated RMIT reference board (EEET2257) rather than a custom-fabricated PCB.</span>
                             </div>
                         </div>
 
@@ -870,16 +993,20 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/eng-design-2/altium-transient-analysis.png" alt="Altium Designer transient analysis simulation screenshot in Citrix Viewer showing three stacked plots: Resistor Voltage (flat DC output), Capacitor Voltage (oscillating), and Capacitor Current (pulsed switching waveform)">
-                                <figcaption>Milestone 2 — Altium transient analysis showing resistor voltage (DC output), capacitor voltage, and capacitor current for the LM3524-based power supply design.</figcaption>
+                                <img src="Photos/Coursework/eng-design-2/design2-board.jpg" alt="RMIT EEET2257 pre-fabricated PCB used for Engineering Design 2 testing — green PCB with electrolytic capacitors, DIP IC, resistors, diodes, and orange terminal blocks">
+                                <figcaption>Milestone 3 — RMIT EEET2257 pre-fabricated reference board used for physical testing. Components include electrolytic capacitors, LM3524-type DIP IC, resistors, diodes, and screw terminal connectors.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/eng-design-2/altium-cap-current-zoom.png" alt="Altium Designer simulation zoomed in on capacitor current waveform showing exponential charge/discharge curve with cursor measurements at 1.1us and 22.8us">
-                                <figcaption>Milestone 2 — Zoomed capacitor current transient. Cursors measure charge and discharge timing constants for the output filter capacitor.</figcaption>
+                                <img src="Photos/Coursework/eng-design-2/altium-transient-analysis.png" alt="Altium Designer transient analysis showing three plots: Resistor Voltage (DC), Capacitor Voltage (oscillating), and Capacitor Current (pulsed waveform)">
+                                <figcaption>Milestone 2 — Altium transient analysis: resistor voltage (DC output), capacitor voltage, and capacitor current for the LM3524-based design.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <img src="Photos/Coursework/eng-design-2/altium-waveforms-detail.png" alt="Altium Designer simulation with measurement panel open showing waveform statistics: rise time 60ns, fall time 0ns, max 10V, AC RMS 7.2V for the power supply circuit">
-                                <figcaption>Milestone 2 — Altium waveform measurement panel. Quantified rise time (~60 ns), peak voltage, and AC RMS values for the switching waveform.</figcaption>
+                                <img src="Photos/Coursework/eng-design-2/altium-cap-current-zoom.png" alt="Altium simulation zoomed on capacitor current — exponential charge/discharge curve with cursor measurements">
+                                <figcaption>Milestone 2 — Zoomed capacitor current transient. Cursors measure charge and discharge timing constants.</figcaption>
+                            </figure>
+                            <figure class="gallery-figure">
+                                <img src="Photos/Coursework/eng-design-2/altium-waveforms-detail.png" alt="Altium waveform measurement panel showing rise time, peak voltage, and AC RMS statistics">
+                                <figcaption>Milestone 2 — Altium waveform measurement panel. Rise time (~60 ns), peak voltage, and AC RMS values quantified.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -888,11 +1015,12 @@
         </div>
 
         <!-- Eng Design 3 -->
-        <div class="course-card">
+        <div class="course-card" id="eng-design-3">
             <div class="course-card-header">
                 <div>
-                    <h3>Engineering Design 3</h3>
+                    <h3>Hybrid Power System Design</h3>
                     <div class="course-meta">
+                        <span class="course-tag">Engineering Design 3</span>
                         <span class="course-tag">Year 4 &mdash; Sem 2</span>
                         <span class="course-tag">Systems Design</span>
                         <span class="course-tag">AI Integration</span>
@@ -910,7 +1038,7 @@
                             <li>Hybrid power system: generator + battery with intelligent mode switching</li>
                             <li>Power Source Control subsystem: manages generator output and battery charge state</li>
                             <li>Dynamic Load subsystem: models realistic variable load profiles</li>
-                            <li>Mode Controller: determines operating mode (generator, battery, hybrid) based on SoC and load</li>
+                            <li>Mode Controller: determines operating mode (generator, battery, hybrid) based on SoC and demand</li>
                             <li>Fuel consumption and battery State-of-Charge (SoC) modelling</li>
                         </ul>
 
@@ -925,11 +1053,11 @@
                         <div class="lab-list">
                             <div class="lab-item">
                                 <strong>Final Report</strong>
-                                <span>Full system design documentation: design justification, technical specifications, subsystem interconnections, assembly/manufacturing considerations, cost estimates, proof-of-concept simulation results, and UI design.</span>
+                                <span>Full system design documentation: design justification, technical specifications, subsystem interconnections, assembly/manufacturing considerations, cost estimates, proof-of-concept simulation results, and UI dashboard design.</span>
                             </div>
                             <div class="lab-item">
                                 <strong>Pitch Presentation + Video</strong>
-                                <span>Team pitch covering the design rationale, key engineering decisions, and simulation outcomes. Scripted and delivered to a panel.</span>
+                                <span>Team pitch covering design rationale, key engineering decisions, and simulation outcomes. Scripted and delivered to a panel.</span>
                             </div>
                         </div>
 
@@ -944,12 +1072,12 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Simulink system block diagram</small></div>
-                                <figcaption>Simulink hybrid power system block diagram showing generator, battery, load, and AI controller subsystems.</figcaption>
+                                <img src="Photos/Coursework/eng-design 3/deisng block diagram.png" alt="System operation flowchart on the left and single line diagram of hybrid power system on the right, showing AI Energy Management, Diesel Generator, Battery Storage, Inverter, Power Distributor, Emergency Devices, and Community Grid">
+                                <figcaption>System architecture: operation flowchart (left) and single-line diagram (right). Key subsystems — AI Energy Management, Diesel Generator, Battery Storage, Inverter, and Community Grid — shown with power flow relationships.</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Simulation results: power output / fuel consumption</small></div>
-                                <figcaption>Pre- vs post-AI integration simulation: power output and fuel consumption comparison.</figcaption>
+                                <img src="Photos/Coursework/eng-design 3/simulink sims.png" alt="Simulink BMS block diagram showing four subsystems: Fuel Usage, Battery Usage, Prediction NN, Supply and Load Simulation, and Mode Controller">
+                                <figcaption>Simulink Battery Management System (BMS) model. Subsystems include Fuel Usage, Battery Usage, Prediction Neural Network, Supply and Load Simulation, and Mode Controller.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -958,11 +1086,11 @@
         </div>
 
 
-        <!-- ===================== HIGH VOLTAGE & SIMULATION ===================== -->
-        <h2 class="category-heading">High Voltage &amp; Simulation</h2>
+        <!-- ===================== HIGH VOLTAGE ENGINEERING ===================== -->
+        <h2 class="category-heading">High Voltage Engineering</h2>
 
         <!-- HV Engineering -->
-        <div class="course-card">
+        <div class="course-card" id="hv">
             <div class="course-card-header">
                 <div>
                     <h3>High Voltage Engineering</h3>
@@ -1007,73 +1135,12 @@
                     <div>
                         <div class="course-gallery">
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Protection relay data / time-current curves</small></div>
-                                <figcaption>Lab 1 — Protection relay coordination data and time-current characteristic curves.</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Simulation -->
-        <div class="course-card">
-            <div class="course-card-header">
-                <div>
-                    <h3>Simulation</h3>
-                    <div class="course-meta">
-                        <span class="course-tag">Year 6</span>
-                        <span class="course-tag">Circuit Simulation</span>
-                        <span class="course-tag">Multisim</span>
-                    </div>
-                </div>
-            </div>
-            <div class="course-body">
-                <p class="course-overview">Advanced circuit simulation using NI Multisim. Labs covered amplifier circuit design, DC operating point analysis, AC frequency response, and transient behaviour. An individual assignment required independent circuit analysis with hand calculations verified against simulation.</p>
-
-                <div class="course-columns">
-                    <div class="course-text">
-                        <h4>Topics Covered</h4>
-                        <ul>
-                            <li>Multisim schematic entry and simulation workflow</li>
-                            <li>DC operating point and bias point analysis</li>
-                            <li>AC analysis: frequency response, Bode plots</li>
-                            <li>Transient simulation and time-domain waveforms</li>
-                            <li>Common-gate amplifier configuration and analysis</li>
-                            <li>Hand calculation verification against simulation results</li>
-                        </ul>
-
-                        <h4>Lab Breakdown</h4>
-                        <div class="lab-list">
-                            <div class="lab-item">
-                                <strong>Lab 2 &mdash; Amplifier Circuit Simulation</strong>
-                                <span>Designed and simulated amplifier circuits (Figures 1–3) in Multisim. Explored common-gate and related configurations. Compared simulation output to expected analytical results.</span>
-                            </div>
-                            <div class="lab-item">
-                                <strong>Lab 3 &mdash; Advanced Circuit Analysis</strong>
-                                <span>Extended simulation work to more complex circuits. Generated AC frequency response curves and transient waveforms. Documented results against theoretical predictions.</span>
-                            </div>
-                            <div class="lab-item">
-                                <strong>Individual Assignment</strong>
-                                <span>Independent assignment requiring hand calculations for two circuit tasks, verified through Multisim simulation. Demonstrated ability to bridge theoretical analysis with practical simulation.</span>
-                            </div>
-                        </div>
-
-                        <h4>Tools Used</h4>
-                        <div class="tool-tags">
-                            <span class="tool-tag">NI Multisim</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="course-gallery">
-                            <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Multisim amplifier circuit schematic</small></div>
-                                <figcaption>Lab 2 — Multisim amplifier circuit schematic (common-gate configuration).</figcaption>
+                                <img src="Photos/Coursework/HV/Fault Current Vs Trip Time.png" alt="Logarithmic chart of C1-A1 fault current (A) vs relay trip time (ms) showing three annotated regions: Inverse-Time Stage, Transition Region, and Definite-Time Stage">
+                                <figcaption>Lab 1 — Relay trip characteristic: fault current (A) vs trip time (ms) on a logarithmic scale. Three operating regions annotated — Inverse-Time Stage (high sensitivity at low fault current), Transition Region, and Definite-Time Stage (fixed trip time at high fault current).</figcaption>
                             </figure>
                             <figure class="gallery-figure">
-                                <div class="img-placeholder">Image coming soon<br><small>Frequency response / Bode plot</small></div>
-                                <figcaption>Lab 3 — AC frequency response Bode plot from Multisim simulation.</figcaption>
+                                <img src="Photos/Coursework/HV/Phasor Magnitude diagram for AC forward bias.png" alt="Phasor magnitude diagram showing relay current phasors A1-B1D, B1-C1D, C1-A1D and others relative to reference voltage Vref=V23">
+                                <figcaption>Lab 1 — Phasor magnitude diagram for AC forward-bias relay conditions. Current phasors (A1-B1D, B1-C1D, C1-A1D, etc.) plotted relative to reference voltage V23, used to verify relay directional element response.</figcaption>
                             </figure>
                         </div>
                     </div>
