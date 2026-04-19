@@ -113,10 +113,51 @@
         }
 
         /* About */
+        .about-columns {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
         .about p {
             font-size: 1.1rem;
-            max-width: 800px;
             margin-bottom: 1rem;
+        }
+
+        .resume-box {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+            padding: 1.5rem;
+            border-top: 4px solid #2563eb;
+        }
+
+        .resume-box h3 {
+            color: #1a1a2e;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .resume-box p {
+            font-size: 0.88rem !important;
+            color: #64748b;
+            margin-bottom: 1.1rem !important;
+        }
+
+        .resume-box .resume-buttons {
+            flex-direction: column;
+            margin-top: 0;
+            gap: 0.65rem;
+        }
+
+        .resume-box .resume-btn {
+            justify-content: center;
+        }
+
+        @media (max-width: 700px) {
+            .about-columns { grid-template-columns: 1fr; }
         }
 
         .education {
@@ -567,22 +608,34 @@
 
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>
-            I am a graduate electrical engineer graduating in 2026 from RMIT University with a
-            Bachelor of Engineering (Electrical and Electronic Engineering) (Honours) combined with
-            a Bachelor of Business (Management).
-        </p>
-        <p>
-            I have hands-on experience in end-to-end electrical design and product development,
-            with an inquisitive and tenacious approach to solving problems. I thrive in team
-            environments and take every opportunity to learn from great mentors and professionals
-            who can guide me and help me develop.
-        </p>
-        <p>
-            Since March 2021, I've been working as an Electrical Design Engineer at Unison Technology/Safety Lighting Research,
-            where I've contributed extensively to the design and development process for a confidential consumer electronics project,
-            progressing from mentorship into a lead role across electrical design, prototype testing, and product development.
-        </p>
+        <div class="about-columns">
+            <div class="about-text">
+                <p>
+                    I am a graduate electrical engineer graduating in 2026 from RMIT University with a
+                    Bachelor of Engineering (Electrical and Electronic Engineering) (Honours) combined with
+                    a Bachelor of Business (Management).
+                </p>
+                <p>
+                    I have hands-on experience in end-to-end electrical design and product development,
+                    with an inquisitive and tenacious approach to solving problems. I thrive in team
+                    environments and take every opportunity to learn from great mentors and professionals
+                    who can guide me and help me develop.
+                </p>
+                <p>
+                    Since March 2021, I've been working as an Electrical Design Engineer at Unison Technology/Safety Lighting Research,
+                    where I've contributed extensively to the design and development process for a confidential consumer electronics project,
+                    progressing from mentorship into a lead role across electrical design, prototype testing, and product development.
+                </p>
+            </div>
+            <div class="resume-box">
+                <h3>My Resume</h3>
+                <p>View or download my full CV for a complete overview of experience, education, and skills.</p>
+                <div class="resume-buttons">
+                    <a href="Alec%20Christov%20Resume.pdf" target="_blank" class="resume-btn resume-btn-view">&#128196; View Resume</a>
+                    <a href="Alec%20Christov%20Resume.pdf" download="Alec Christov Resume.pdf" class="resume-btn resume-btn-download">&#8681; Download Resume</a>
+                </div>
+            </div>
+        </div>
         <div class="education">
             <h3>Education</h3>
             <p><strong>RMIT University</strong> (2020-2026)</p>
@@ -868,11 +921,6 @@
                     <a href="https://www.linkedin.com/in/alec-christov-6b1568214" target="_blank">LinkedIn Profile</a>
                 </div>
             </div>
-        </div>
-
-        <div class="resume-buttons">
-            <a href="Alec%20Christov%20Resume.pdf" target="_blank" class="resume-btn resume-btn-view">&#128196; View Resume</a>
-            <a href="Alec%20Christov%20Resume.pdf" download="Alec Christov Resume.pdf" class="resume-btn resume-btn-download">&#8681; Download Resume</a>
         </div>
     </section>
 
