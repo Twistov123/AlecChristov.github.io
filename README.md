@@ -42,4 +42,4 @@ This portfolio contains documentation and details of my personal and professiona
 
 ---
 
-*This repository hosts my portfolio website. View it live at: https://twistov123.github.io/AlecChristov.github.io/*
+*This repository hosts my portfolio website. View it live at: https://alecchristov.com.html*
