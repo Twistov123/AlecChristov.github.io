@@ -1,45 +1,56 @@
 # Alec Christov — Portfolio
 
-Welcome to my project portfolio repository. This site showcases the electrical engineering projects I've completed and am currently working on, demonstrating my practical experience in end-to-end product development.
+Personal portfolio and academic coursework showcase for Alec Christov, Electrical Design Engineer based in Melbourne, Australia.
 
-## About Me
+**Live site:** [alecchristov.com](https://alecchristov.com)
 
-I'm a graduate Electrical Design Engineer completing my dual degree at RMIT University in 2026:
-- **Bachelor of Engineering (Electrical and Electronic Engineering) (Honours)**
+---
+
+## About
+
+Graduating 2026 from RMIT University with:
+- **Bachelor of Engineering (Electrical & Electronic Engineering)(Honours)**
 - **Bachelor of Business (Management)**
 
-Since March 2021, I've been working professionally at Unison Technology/Safety Lighting Research, where I've progressed from mentorship into a lead role handling electrical design, prototype testing, and product development for consumer electronics.
+Working at Unison Technology / Safety Lighting Research since March 2021 as Electrical Design Engineer, progressing from mentorship to leading electrical design, prototype validation, and product development for consumer electronics.
 
-## What You'll Find Here
+---
 
-This portfolio contains documentation and details of my personal and professional projects, including:
+## Site Structure
 
-- **Electric Bike** — Custom lithium battery pack design and power electronics integration
-- **Metal Melting Transformer** — High-current transformer design using repurposed microwave components
-- **Three-Port Standalone PV System** — Solar power management with custom PCB and Wi-Fi monitoring
-- **Lithium Ion Charging Circuits** — Custom battery management and charging solutions
-- **Dual-Resonance Tesla Coil** — High-voltage RF design (in progress)
-- **Consumer Electronics Product** — Professional project under NDA demonstrating full product development lifecycle
+| Page | Description |
+|------|-------------|
+| `index.html` | Main portfolio — projects, about, skills, contact |
+| `coursework.html` | Academic coursework showcase — labs, simulations, design work |
 
-## Technical Skills
+---
 
-**Design Tools:** Autodesk Fusion 360 Electronics, Altium Designer
+## Projects Featured
 
-**Core Competencies:**
-- Electrical design and schematic capture
-- PCB layout and design iteration
-- Component selection and datasheet interpretation
-- BOM creation, management, and procurement
-- Prototype assembly, testing, and debugging
-- Battery-powered and low-power embedded design
+- **NDA Consumer Electronics Product** — Professional product development under NDA (Final Phase)
+- **Dual-Resonance Tesla Coil (DRSSTC)** — Solid-state HV resonant coil (In Development)
+- **Electric Bike** — Custom lithium-ion battery pack with BMS and motor controller integration
+- **Metal Melting Transformer** — Repurposed MOTs rewound for high-current aluminium melting
+- **Three-Port Standalone PV System** — Custom PCB with solar, battery, and load management + Wi-Fi monitoring
+- **Lithium Ion Charging Circuits** — Custom CC/CV charging boards
+- **DIY 30V 5A Lab Bench Power Supply** — 36V switching supply + buck-boost converter build
+- **DIY Wind Turbine** — Repurposed e-bike hub motor generator (Discontinued)
+
+Academic coursework (PCB design, power electronics simulations, embedded systems, signal processing, HV protection) is documented in full on the [Coursework page](https://alecchristov.com/coursework.html).
+
+---
+
+## Tech Stack
+
+This is a single-file static site (all HTML, CSS, and JS inline) hosted on GitHub Pages with a custom domain via Cloudflare DNS.
+
+**Design tools used:** Altium Designer, Autodesk Fusion 360 Electronics, PSIM, NI Multisim, Keil MDK, MATLAB
+
+---
 
 ## Contact
 
 - **Email:** Alecchristov@gmail.com
-- **Phone:** 0490 816 469
+- **LinkedIn:** [alec-christov-6b1568214](https://www.linkedin.com/in/alec-christov-6b1568214)
 - **GitHub:** [Twistov123](https://github.com/Twistov123)
 - **Location:** Melbourne, Australia
-
----
-
-*This repository hosts my portfolio website. View it live at: https://alecchristov.com.html*

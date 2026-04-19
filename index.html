@@ -522,9 +522,10 @@
     <section class="intro-band" aria-label="Introduction">
         <div class="intro-content">
             <p>
-                Welcome to a snapshot of the projects shaping my engineering practice, from hands-on power electronics
-                and renewable energy experiments to confidential product development. I enjoy practical problem solving,
-                careful testing, and turning ideas into reliable working hardware.
+                Welcome to a snapshot of the projects shaping my engineering practice — from hands-on power electronics
+                and renewable energy experiments to confidential product development. Explore the projects below, or
+                visit the <a href="coursework.html" style="color:#86efac;font-weight:600;">Academic Coursework</a> page
+                for an in-depth showcase of university labs, simulations, and design work.
             </p>
         </div>
     </section>
@@ -688,19 +689,6 @@
                 <p class="click-hint">Click for details</p>
             </div>
 
-            <div class="project-card" onclick="openModal('psu-3v3')">
-                <h3>3.3V Regulated DC Power Supply</h3>
-                <p class="project-subtitle">Engineering Design 2 — University Project</p>
-                <p>Designed a regulated 3.3V DC power supply in Altium Designer as part of the Engineering Design 2 course at RMIT. Covered schematic capture, PCB layout, and design-for-manufacture considerations.</p>
-                <div class="tech-stack">
-                    <span>Altium Designer</span>
-                    <span>PCB Design</span>
-                    <span>Power Regulation</span>
-                    <span>University Project</span>
-                </div>
-                <span class="project-status status-complete">Completed</span>
-                <p class="click-hint">Click for details</p>
-            </div>
 
             <div class="project-card" onclick="openModal('bench-psu')">
                 <h3>DIY 30V 5A Lab Bench Power Supply</h3>
@@ -772,6 +760,17 @@
         </div>
 
         <div class="skills-section">
+            <h3>AI Tools</h3>
+            <div class="skills-list" style="--pill-bg: #b45309;">
+                <span style="background:#b45309;">Claude</span>
+                <span style="background:#b45309;">ChatGPT</span>
+                <span style="background:#b45309;">Gemini</span>
+                <span style="background:#b45309;">Sora</span>
+                <span style="background:#b45309;">Codex</span>
+            </div>
+        </div>
+
+        <div class="skills-section">
             <h3>Software &amp; Tools</h3>
             <div class="skills-list" style="--pill-bg: #0f766e;">
                 <span style="background:#0f766e;">Altium Designer</span>
@@ -783,6 +782,8 @@
                 <span style="background:#0f766e;">Keil MDK</span>
                 <span style="background:#0f766e;">C Programming</span>
                 <span style="background:#0f766e;">Keysight Oscilloscope</span>
+                <span style="background:#0f766e;">GitHub</span>
+                <span style="background:#0f766e;">Git Version Control</span>
             </div>
         </div>
 
@@ -829,7 +830,7 @@
                 <div class="icon">in</div>
                 <div>
                     <strong>LinkedIn</strong><br>
-                    <a href="https://www.linkedin.com/in/" target="_blank">LinkedIn Profile</a>
+                    <a href="https://www.linkedin.com/in/alec-christov-6b1568214" target="_blank">LinkedIn Profile</a>
                 </div>
             </div>
         </div>
@@ -1068,46 +1069,6 @@
         </div>
     </div>
 
-    <!-- Modal: 3.3V PSU -->
-    <div class="modal-overlay" id="modal-psu-3v3">
-        <div class="modal">
-            <div class="modal-header">
-                <button class="modal-close" onclick="closeModal('psu-3v3')">&times;</button>
-                <h2>3.3V Regulated DC Power Supply</h2>
-                <p class="subtitle">Engineering Design 2 — University Project</p>
-            </div>
-            <div class="modal-body">
-                <div class="nda-notice" style="background: #dbeafe; border-color: #3b82f6;">
-                    <h4 style="color: #1e40af;">&#9432; Note on PCB Images</h4>
-                    <p style="color: #1e3a8a;">The schematic and layout were my own original design completed in Altium Designer. Due to time constraints in the course, a pre-fabricated board provided by RMIT was used for physical testing rather than fabricating my custom layout.</p>
-                </div>
-
-                <h3>Project Overview</h3>
-                <p>A university project completed as part of Engineering Design 2 at RMIT. The brief required designing a regulated 3.3V DC power supply from scratch, covering the full PCB design workflow from schematic capture through to layout and design-for-manufacture outputs in Altium Designer.</p>
-
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Completed full schematic capture of a regulated 3.3V supply in Altium Designer</li>
-                    <li>Designed PCB layout with attention to component placement and power trace routing</li>
-                    <li>Selected and specified appropriate voltage regulator and supporting passives</li>
-                    <li>Generated fabrication outputs (Gerbers, BOM, assembly notes)</li>
-                    <li>Validated regulation performance and load behaviour on the test bench</li>
-                </ul>
-
-                <h3>Skills Developed</h3>
-                <ul>
-                    <li>Altium Designer schematic capture and PCB layout workflow</li>
-                    <li>Linear and switching voltage regulator selection and application</li>
-                    <li>PCB design-for-manufacture considerations</li>
-                    <li>Fabrication output generation (Gerbers, BOM)</li>
-                    <li>Bench testing and validation of power supply specifications</li>
-                </ul>
-
-                <h3>Technical Details</h3>
-                <p>The design targets a regulated 3.3V output suitable for powering microcontroller and digital logic circuits. The project emphasised working within a structured engineering design process — requirements, design, review, and validation — mirroring industry practice.</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal: Bench PSU -->
     <div class="modal-overlay" id="modal-bench-psu">
