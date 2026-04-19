@@ -63,9 +63,13 @@
         .back-bar a:hover { text-decoration: underline; }
 
         .page-content {
-            max-width: 1100px;
+            max-width: 1260px;
             margin: 0 auto;
             padding: 3rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
 
         /* ---- Table of Contents ---- */
@@ -74,7 +78,10 @@
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             padding: 1.5rem 1.75rem;
-            margin-bottom: 3rem;
+            position: sticky;
+            top: 5rem;
+            max-height: calc(100vh - 6rem);
+            overflow-y: auto;
         }
 
         .toc > h3 {
@@ -86,8 +93,8 @@
         }
 
         .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 1.25rem;
         }
 
@@ -116,6 +123,13 @@
         }
 
         .toc-category a:hover { color: #2563eb; text-decoration: none; }
+
+        .toc-category a.toc-active {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
 
         /* ---- Category headings ---- */
         .category-heading {
@@ -270,12 +284,26 @@
         footer a { color: #cbd5e0; }
         footer .copyright { font-size: 0.9rem; }
 
+        @media (max-width: 900px) {
+            .page-content {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                position: static;
+                max-height: none;
+            }
+            .toc-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .page-hero h1 { font-size: 1.9rem; }
             .course-columns { grid-template-columns: 1fr; }
             nav ul { gap: 1rem; font-size: 0.9rem; }
             .course-card-header { flex-direction: column; }
-            .toc-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -349,6 +377,8 @@
             </div>
         </nav>
 
+
+        <div class="main-content">
 
         <!-- ===================== POWER ELECTRONICS ===================== -->
         <h2 class="category-heading">Power Electronics</h2>
@@ -1148,6 +1178,8 @@
             </div>
         </div>
 
+        </div><!-- end main-content -->
+
     </div><!-- end page-content -->
 
     <footer>
@@ -1164,5 +1196,27 @@
         </div>
     </footer>
 
+    <script>
+        const sections = Array.from(document.querySelectorAll('.course-card[id]'));
+        const tocLinks = Array.from(document.querySelectorAll('.toc-category a[href^="#"]'));
+
+        function updateToc() {
+            const threshold = window.scrollY + window.innerHeight * 0.3;
+            let current = sections[0]?.id ?? null;
+            for (const section of sections) {
+                if (section.offsetTop <= threshold) {
+                    current = section.id;
+                } else {
+                    break;
+                }
+            }
+            tocLinks.forEach(link => {
+                link.classList.toggle('toc-active', link.getAttribute('href') === '#' + current);
+            });
+        }
+
+        window.addEventListener('scroll', updateToc, { passive: true });
+        updateToc();
+    </script>
 </body>
 </html>
