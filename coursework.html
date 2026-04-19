@@ -63,11 +63,11 @@
         .back-bar a:hover { text-decoration: underline; }
 
         .page-content {
-            max-width: 1260px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 3rem 2rem 4rem;
             display: grid;
-            grid-template-columns: 240px 1fr;
+            grid-template-columns: 270px 1fr;
             gap: 2.5rem;
             align-items: start;
         }
@@ -77,11 +77,12 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            padding: 1.5rem 1.75rem;
+            padding: 1.25rem 1rem;
             position: sticky;
             top: 5rem;
             max-height: calc(100vh - 6rem);
             overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .toc > h3 {
@@ -115,11 +116,14 @@
         .toc-category li { margin-bottom: 0.25rem; }
 
         .toc-category a {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: #475569;
             display: block;
             padding: 0.15rem 0;
             transition: color 0.15s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .toc-category a:hover { color: #2563eb; text-decoration: none; }
